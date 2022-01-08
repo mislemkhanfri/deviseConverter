@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+          
+        }
+    </style>
+    <title>Devise Converter</title>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-6 offset-md-3">
+               <h1 class="display-4 text-center mb-3">Devise Converter
+                   </h1>
+            <form>
+                <div class="form-group">
+                   <input 
+                   id="euroInput"
+                   type="number" 
+                   class="form-control form-control-lg" 
+                   placeholder="Enter EURO ...">
+                </div>
+            </form>
+            <div id="output">
+             <div class="card bg-primary mb-2">
+                <div class="card-block">
+                    <h4>Dollars:</h4>
+                    <div id="dollarOutput">
+                </div>
+                </div>
+            </div>
+
+            <div class="card bg-success mb-2">
+                <div class="card-block">
+                    <h4>Dinars:</h4>
+                    <div id="dinarOutput">
+                </div>
+                </div>
+            </div>
+
+            <div class="card bg-danger mb-2">
+                <div class="card-block">
+                    <h4>Yen:</h4>
+                    <div id="yenOutput">
+                </div>
+                </div>
+            </div>
+           </div>
+       </div>
+   </div> 
+   <script>
+       document.getElementById('output').style.visibility='hidden';
+      document.getElementById('euroInput').addEventListener('input',function(e){
+        document.getElementById('output').style.visibility='visible';
+          let eur=e.target.value;
+      document.getElementById('dollarOutput').innerHTML=eur*1.15;
+      document.getElementById('dinarOutput').innerHTML=eur*220;
+      document.getElementById('yenOutput').innerHTML=eur*5;
+      }) 
+   </script>
+</body>
+</html>
